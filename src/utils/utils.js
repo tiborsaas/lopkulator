@@ -7,10 +7,10 @@ export function parseFormData(entries) {
 }
 
 export const formatNumber = (num) => {
-  const truncatedNum = num / 1000000;
+  const truncatedNum = num / 1e6;
 
   const n = parseInt(truncatedNum * 100) / 100;
-  const m = parseInt(parseInt(n) * 100) / 10000;
+  const m = parseInt(n * 100) / 100000;
 
   const fixedFloat = n < 1000 ? n : m;
 

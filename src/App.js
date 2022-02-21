@@ -32,10 +32,7 @@ function App() {
         <form onSubmit={calculate}>
           <input type="number" name="hello" ref={number} />
           <button>Kalkulál</button>
-          <br />
-          {result && formatNumber(number.current.value)}
-          <br />
-          <br />
+          <p>{result && formatNumber(number.current.value)}</p>
           <AlgoSelector algos={Algos} selected={selectedAlgo} onChange={setSelectedAlgo} />
         </form>
         {result && (
@@ -43,7 +40,17 @@ function App() {
             <Algo formData={result} userInput={number} />
           </section>
         )}
+        {!result && (
+          <section className="intro">
+            A lopkulátor segít vizualizálni azokat a nagy összegeket, amiket már a hétköznapi életben nehezen látunk át.
+            Az alkalmazás remek kiegészítő lehet egy korrupciós cikk olvasása mellé, valamint kezdő, fiatal oligarcháknak is támpontokat biztosít.
+          </section>
+        )}
       </header>
+      <footer>
+        Keszitette: <a href="https://twitter.com/tiborsaas">@tiborsaas</a> -
+        Forrás: <a href="https://github.com/tiborsaas/lopkulator">GitHub</a>
+      </footer>
     </div>
   );
 }
