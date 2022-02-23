@@ -112,6 +112,12 @@ footer {
 
 /******* MOBILE STYLES ********/
 
+@media (max-width: 975px) {
+  .intro {
+    width: initial;
+  }
+}
+
 @media (max-width: 730px) {
   .App-header {
     margin: 0;
@@ -134,7 +140,19 @@ footer {
 @media (max-width: 520px) {
   .App-header {
     text-align: center;
+    padding: 1rem;
+    width: initial;
+    display: flex;
+    flex-direction: column;
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+  }
+
   .App-header button.compute {
     display: block;
     width: 100%;
