@@ -1,3 +1,11 @@
 .cash-stack {
   margin-top: 3rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.cash-stack img {
+  flex: 1 1 0;
+  width: 35vh;
 }

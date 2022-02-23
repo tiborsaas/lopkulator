@@ -1,11 +1,12 @@
 import React from "react";
-import deak from "./get-doc-resource.png";
+import deak from "./20k.png";
 
 import "./Cash.css";
 
 export default function Cash({ userInput }) {
   const Model = {
     weight: 0.0095, // gramm
+    // https://www.mnb.hu/bankjegy-es-erme/bankjegyeink/megujitott-20-000-forintos-bankjegy
     unitSize: 100,
     value: 20000,
   };
@@ -25,11 +26,11 @@ export default function Cash({ userInput }) {
             .fill(0)
             .map((_, i) => (
               <img src={deak} key={i} alt="tes" className="deak" />
-            ))}
+          ))}
         </div>
       </section>
       <aside>
-        <div>{containers} köteg Deák. (1 Deák = 100db)</div>
+        <div>{containers} köteg (100db Deák)</div>
         <div>{parseInt(totalWeight)}kg teljes tömeg</div>
       </aside>
     </div>
