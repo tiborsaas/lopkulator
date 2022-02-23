@@ -17,3 +17,12 @@ export const formatNumber = (num) => {
   const postFix = n < 1000 ? "millió" : "milliárd";
   return `${fixedFloat} ${postFix}`;
 };
+
+export const getAlgoComponent = (Algos, selectedAlgo) => {
+  return Algos.reduce((algo, current) => {
+    if (current.meta.id === selectedAlgo) {
+      algo = current.component;
+    }
+    return algo;
+  }, null);
+}
