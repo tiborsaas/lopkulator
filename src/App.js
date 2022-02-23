@@ -6,6 +6,15 @@ import { formatNumber, parseFormData } from "./utils/utils";
 
 import "./App.css";
 
+const getAlgoComponent = (Algo, selectedAlgo) => {
+  return Algos.reduce((algo, current) => {
+    if (current.meta.id === selectedAlgo) {
+      algo = current.component;
+    }
+    return algo;
+  }, null);
+}
+
 function App() {
   const number = useRef(0);
   const [result, setResult] = useState(null);
@@ -18,12 +27,7 @@ function App() {
     setResult(data);
   };
 
-  const Algo = Algos.reduce((algo, current) => {
-    if (current.meta.id === selectedAlgo) {
-      algo = current.component;
-    }
-    return algo;
-  }, null);
+  const Algo = getAlgoComponent(Algos, selectedAlgo);
 
   return (
     <div className="App">
