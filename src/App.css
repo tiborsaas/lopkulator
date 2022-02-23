@@ -22,6 +22,7 @@ a {
   font-size: calc(10px + 2vmin);
   color: white;
   padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .App-link {
@@ -38,11 +39,17 @@ a {
   font-size: 1.6rem;
 }
 
+main {
+  margin: auto;
+}
+
 .intro {
+  color: #ccc;
   font-size: 1rem;
   width: 50%;
   background: #1d2025;
   padding: 1rem;
+  margin: 0 auto;
 }
 
 .results {
@@ -83,9 +90,12 @@ a {
 
 .algo-layout section {
   flex: 1 1 75%;
+  color: #fff;
 }
 
 .algo-layout aside {
+  color: #ccc;
+  font-size: 2rem;
   flex: 1 1 25%;
   padding: 1rem;
 }

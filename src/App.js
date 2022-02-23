@@ -30,11 +30,13 @@ function App() {
       <header className="App-header">
         <h1>Lopkulátor</h1>
         <form onSubmit={calculate}>
-          <input type="number" name="hello" ref={number} />
+          <input type="number" name="hello" min="0" defaultValue="0" step="100000" ref={number} />
           <button>Kalkulál</button>
           <p>{result && formatNumber(number.current.value)}</p>
           <AlgoSelector algos={Algos} selected={selectedAlgo} onChange={setSelectedAlgo} />
         </form>
+      </header>
+      <main>
         {result && (
           <section className="results">
             <Algo formData={result} userInput={number} />
@@ -43,12 +45,12 @@ function App() {
         {!result && (
           <section className="intro">
             A lopkulátor segít vizualizálni azokat a nagy összegeket, amiket már a hétköznapi életben nehezen látunk át.
-            Az alkalmazás remek kiegészítő lehet egy korrupciós cikk olvasása mellé, valamint kezdő, fiatal oligarcháknak is támpontokat biztosít.
+            Az alkalmazás remek kiegészítő lehet egy korrupciós cikk olvasása mellé, valamint kezdő /  fiatal oligarcháknak is támpontokat biztosít.
           </section>
         )}
-      </header>
+      </main>
       <footer>
-        Keszitette: <a href="https://twitter.com/tiborsaas">@tiborsaas</a> -
+        Keszitette: <a href="https://tibor.szasz.hu">tiborsaas</a> -
         Forrás: <a href="https://github.com/tiborsaas/lopkulator">GitHub</a>
       </footer>
     </div>
@@ -56,10 +58,8 @@ function App() {
 }
 
 export default App;
-
 /**
- * 💰
- * https://www.mnb.hu/bankjegy-es-erme/bankjegyeink/megujitott-20-000-forintos-bankjegy
+ * 💰💰💰
  * https://www.cargurus.com/Cars/2017-Lamborghini-Huracan-Price-c26103
  * https://vasarlocsapat.hu/_hirek/_elelmiszerarak/burgonya-arak.shtml
  */
