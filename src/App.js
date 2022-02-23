@@ -2,18 +2,9 @@ import { useRef, useState } from "react";
 
 import { Algos } from "./algos";
 import AlgoSelector from "./components/algo-selector";
-import { formatNumber, parseFormData } from "./utils/utils";
+import { formatNumber, getAlgoComponent, parseFormData } from "./utils/utils";
 
 import "./App.css";
-
-const getAlgoComponent = (Algo, selectedAlgo) => {
-  return Algos.reduce((algo, current) => {
-    if (current.meta.id === selectedAlgo) {
-      algo = current.component;
-    }
-    return algo;
-  }, null);
-}
 
 function App() {
   const number = useRef(0);
@@ -49,12 +40,13 @@ function App() {
         {!result && (
           <section className="intro">
             A lopkulátor segít vizualizálni azokat a nagy összegeket, amiket már a hétköznapi életben nehezen látunk át.
-            Az alkalmazás remek kiegészítő lehet egy korrupciós cikk olvasása mellé, valamint kezdő /  fiatal oligarcháknak is támpontokat biztosít.
+            Az alkalmazás remek kiegészítő lehet egy korrupciós cikk olvasása mellé, valamint akár kezdő oligarcháknak is támpontokat biztosíthat.
+            <h1>Work in progress</h1>
+            Az app még erősen protoípus/PoC állapotban van, mindenféle kontribúciót szívesen fogadok pull request vagy egyéb (ötlet, grafika, megosztás) formában.
           </section>
         )}
       </main>
       <footer>
-        Keszitette: <a href="https://tibor.szasz.hu">tiborsaas</a> -
         Forrás: <a href="https://github.com/tiborsaas/lopkulator">GitHub</a>
       </footer>
     </div>
