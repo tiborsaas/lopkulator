@@ -28,7 +28,7 @@ export default function Cash({ userInput }) {
   const transporters = Math.floor(massKg / transportMass);
   const lorries = Math.floor(massKg / lorryTransportMass);
   const lorryTrafficJam = Math.floor((lorries * lorryLength) / 1000);
-console.log(containers);
+
   return (
     <div className="algo-layout krumpli-algo">
       <section>
@@ -51,6 +51,7 @@ console.log(containers);
         {containers >= cutoffUnits * 20 && containers < cutoffUnits * 400 && (
           <>
             <h3>{lorries} kamiont rendelj</h3>
+            <p>Ha szorosan egymás mögött állnak, akkor {lorryTrafficJam}km sorra számíts, ~16m hosszal számolva</p>
             {Array(lorries)
               .fill(0)
               .map(() => `🚛`)}
