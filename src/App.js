@@ -26,7 +26,7 @@ function App() {
         <h1>Lopkulátor</h1>
         <form onSubmit={calculate}>
           <input type="number" name="hello" min="0" defaultValue="0" step="100000" ref={number} />
-          <button>Kalkulál</button>
+          <button className="compute">Kalkulál</button>
           <p>{result && formatNumber(number.current.value)}</p>
           <AlgoSelector algos={Algos} selected={selectedAlgo} onChange={setSelectedAlgo} />
         </form>
